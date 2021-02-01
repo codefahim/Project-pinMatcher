@@ -20,7 +20,7 @@ eventSystem.addEventListener('click', function(event) {
     customInput = document.getElementById('customerInput');
     if (text == 'C') {
         customInput.value = '';
-    } else if (text == '<') {
+    } else if (text == '<' || text === ' ') {
         var newNumber = customInput.value;
         var newtext = newNumber.substr(0, newNumber.length - 1);
         customInput.value = newtext;
@@ -28,29 +28,6 @@ eventSystem.addEventListener('click', function(event) {
         customInput.value = customInput.value + text;
     }
 })
-
-// Create custom pin Number by user || // collect custom pin system2
-
-// function randomNumber() {
-//     buttons = document.querySelectorAll('.button');
-//     for (let i = 0; i < buttons.length; i++) {
-//         buttons[i].addEventListener('click', function() {
-//             var text = this.innerText;
-//             customInput = document.getElementById('customerInput');
-//             if (text == 'C') {
-//                 customInput.value = '';
-//             } else if (text == '<') {
-//                 var newNumber = customInput.value;
-//                 var newtext = newNumber.substr(0, newNumber.length - 1);
-//                 customInput.value = newtext;
-//             } else {
-//                 customInput.value = customInput.value + text;
-//             }
-
-//         })
-//     }
-// }
-// Create custom pin Number by user  function Close;
 
 
 // Create random pin number 
@@ -96,6 +73,7 @@ function matchedOrNot() {
                 customPin.value = "";
             }
         }
+
     });
 };
 // Pin matched close from here
