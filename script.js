@@ -12,7 +12,7 @@ randomNumber();
 matchedOrNot();
 
 
-
+// Create custom pin Number by user 
 
 function randomNumber() {
     buttons = document.querySelectorAll('.button');
@@ -32,6 +32,10 @@ function randomNumber() {
         })
     }
 }
+// Create custom pin Number by user  function Close;
+
+
+// Create random pin number 
 
 function pin() {
     var pinMake = document.getElementById('pin');
@@ -39,15 +43,17 @@ function pin() {
         var number = (Math.random() * 10000 + '').split('.');
         math = number[0];
         if (math.length == 4) {
-            document.getElementById('customerPin').value = math;
+            return document.getElementById('customerPin').value = math;
         } else if (math.length == 3) {
-            randomNumber();
+            return randomNumber();
         }
         document.getElementById('notMatched').style.display = 'none';
         document.getElementById('matched').style.display = 'none';
     })
 }
+// Create random pin number  close here.
 
+// Pin matched check from here 
 
 function matchedOrNot() {
     var submit = document.getElementById('submit');
@@ -71,3 +77,4 @@ function matchedOrNot() {
         }
     });
 };
+// Pin matched close from here
