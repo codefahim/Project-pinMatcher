@@ -49,7 +49,8 @@ function pin() {
         if (math.length == 4) {
             return customPin.value = math;
         } else
-        if (math.length == 3) {
+        if (math.length <= 3) {
+            console.log(math);
             return randomNumber();
         }
         document.getElementById('notMatched').style.display = 'none';
