@@ -1,9 +1,11 @@
 var buttons;
 var math;
 var userPin;
-var randomPin;
+var customPin;
 var userPinNo;
 var randomPinNo;
+var customInput;
+
 
 
 
@@ -19,14 +21,15 @@ function randomNumber() {
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', function() {
             var text = this.innerText;
+            customInput = document.getElementById('customerInput');
             if (text == 'C') {
-                document.getElementById('customerInput').value = '';
+                customInput.value = '';
             } else if (text == '<') {
-                var newnm = document.getElementById('customerInput').value;
-                var newtext = newnm.substr(0, newnm.length - 1);
-                document.getElementById('customerInput').value = newtext;
+                var newNumber = customInput.value;
+                var newtext = newNumber.substr(0, newNumber.length - 1);
+                customInput.value = newtext;
             } else {
-                document.getElementById('customerInput').value = document.getElementById('customerInput').value + text;
+                customInput.value = customInput.value + text;
             }
 
         })
@@ -42,9 +45,11 @@ function pin() {
     pinMake.addEventListener('click', function() {
         var number = (Math.random() * 10000 + '').split('.');
         math = number[0];
+        customPin = document.getElementById('customerPin');
         if (math.length == 4) {
-            return document.getElementById('customerPin').value = math;
-        } else if (math.length == 3) {
+            return customPin.value = math;
+        } else
+        if (math.length == 3) {
             return randomNumber();
         }
         document.getElementById('notMatched').style.display = 'none';
@@ -58,21 +63,21 @@ function pin() {
 function matchedOrNot() {
     var submit = document.getElementById('submit');
     submit.addEventListener('click', function() {
-        userPin = document.getElementById('customerInput').value;
+        userPin = customInput.value;
         userPinNo = parseInt(userPin);
-        randomPin = document.getElementById('customerPin').value;
+        randomPin = customPin.value;
         randomPinNo = parseInt(randomPin);
         if (userPinNo >= 0) {
             if (userPinNo == randomPinNo) {
                 var matched = document.getElementById('matched');
                 matched.style.display = 'block';
-                document.getElementById('customerInput').value = " ";
-                document.getElementById('customerPin').value = "";
+                customInput.value = " ";
+                customPin.value = "";
             } else {
                 var notMatched = document.getElementById('notMatched');
                 notMatched.style.display = 'block';
-                document.getElementById('customerInput').value = " ";
-                document.getElementById('customerPin').value = "";
+                customInput.value = " ";
+                customPin.value = "";
             }
         }
     });
