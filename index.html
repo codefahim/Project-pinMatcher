@@ -14,15 +14,15 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="pin-generator half-width">
-                    <input id="customerPin" class="form-control" type="text">
-                    <button id="pin" class="generate-btn">Generate Pin</button>
+                    <input class="form-control" type="text" id="displayRandomNumber">
+                    <button class="generate-btn" id="generateBtn" onclick="pinGenerator();">Generate Pin</button>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="input-section half-width">
-                    <input id="customerInput" class="form-control" type="text">
+                    <input class="form-control" type="text" id="userPin">
                     <div class="numbers">
-                        <div id="event" class="calc-body">
+                        <div class="calc-body" id="event">
                             <div class="calc-button-row">
                                 <div class="button">7</div>
                                 <div class="button">8</div>
@@ -42,26 +42,23 @@
                                 <div class="button">
                                     <</div>
                                         <div class="button">0</div>
-                                        <div class="button ">C</div>
+                                        <div class="button">C</div>
                                 </div>
-                            </div>
-                            <div>
-                                <button id="submit" type="submit " class="submit-btn ">Submit</button>
-                                <p class="action-left ">3 try left</p>
-                            </div>
 
+                            </div>
+                        </div>
+                        <div>
+                            <button type="submit" id="submit" onclick="submitButton(true)" class="submit-btn">Submit</button>
+                            <p class="action-left"><span id="count">3</span> try left</p>
                         </div>
                     </div>
                 </div>
-                <div class="notify-section ">
-                    <p id="notMatched" class="notify ">❌ Pin Didn't Match, Please try again</p>
-                    <p id="matched" class="notify ">✅ Pin Matched... Secret door is opening for you</p>
+                <div class="notify-section">
+                    <p class="notify" id="closed">❌ Pin Didn't Match, Please try again</p>
+                    <p class="notify" id="open">✅ Pin Matched... Secret door is opening for you</p>
                 </div>
             </div>
-        </div>
-    </div>
-    <script src="script.js "></script>
-
+            <script src="app.js"></script>
 </body>
 
 </html>

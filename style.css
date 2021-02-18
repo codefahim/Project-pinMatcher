@@ -104,6 +104,7 @@ input[type='text']:focus {
     margin-top: 20px;
     border-radius: 15px;
     padding: 5px 20px;
+    display: none;
 }
 
 .notify-section {
@@ -114,9 +115,4 @@ input[type='text']:focus {
 .action-left {
     color: #FF3C5F;
     margin-top: 10px;
-}
-
-#notMatched,
-#matched {
-    display: none;
 }
